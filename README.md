@@ -202,6 +202,15 @@ Run this command in the *master* node will create three replicas of the service.
 
 You can try to run ``docker ps`` in each node and see what is shown. You also can try to run again the previous commands in the *master*.
 
+Also we have reduce the number of replicas:
+
+```
+$ docker service scale telegram_bot=2
+```
+*master* node decide which worker execute each task.
+
 But... **What is exactly to scale a docker service?** [Here](https://docs.docker.com/engine/reference/commandline/service_scale/) you have more information.
 
 * To conclude... **try to send messages to your telegram Bot and see how it answer!**
+
+> NOTE: To remove the service, type ``docker service rm telegram_bot``
