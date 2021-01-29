@@ -43,7 +43,7 @@ Now, we have the packaged virtual machine. We need to import it.
 * Import the *docker_swarm.box* file with the next command:
 
   ```
-  $ vagrant box add docker_swarm.box
+  $ vagrant box add docker_swarm docker_swarm.box
   ```
 
   With this command, we will have imported an image named *docker_swarm*.
