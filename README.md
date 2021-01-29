@@ -117,7 +117,7 @@ We can see that IP addresses on *eth0* interfaces are:
 
 **It is very important that nodes are connected each other**, so this is the next thing we are going to check:
 
-> NOTE: we can enter to the lxd containers typing *master*, *esclavo1* or *esclavo2* in each case.
+> NOTE: we can enter to the lxd containers typing *master*, *esc1* or *esc2* in each case.
 
 * Enter to the *master* lxd container (*master* node) typing ``master``. Then we are going to check the connection with the two workers:
   ```
@@ -168,3 +168,40 @@ So, Cluster is already deployed. Now, we are going how it works running a **Tele
 > NOTE: It is very important to save the **token**
 
 #### Deploying apps in the Cluster
+
+* I have prepared a docker that runs a Telegram bot but, to make it work, you must paste your Telegram bot Token in the file */home/ubuntu/telegram_bot/context/token.txt*.
+
+  > NOTE: You have to do this in the three nodes.
+
+* Now, let's to create the Docker image in the three nodes. **It is very important that the three nodes have the image** because, otherwise, the manager will not be able to distribute the task between them. To create the image, go to */home/ubuntu/telegram_bot* folder. Then, run:
+
+  ```
+  $ ./build.sh
+  ```
+  > NOTE: You have to do this in the three nodes.
+
+Wait the Docker image build finish at three nodes.
+
+* Now, we can launch the Telegram bot. For doing this, go to the *master* node and type:
+
+```
+$ docker service create --name telegram_bot fgonzalezr1998/telegram_bot
+```
+We have to wait for a few seconds.
+
+* If we type on *master* ``docker service list`` we will see the *telegram_bot* process running. If we type ``docker service ps telegram_bot`` We can see which node is running it. Here there is an example:
+
+![img](docs/docker-service.png)
+
+As we can see, in this example, we have created only one replica, but, we can **scale** the service:
+
+```
+$ docker service scale telegram_bot=3
+```
+Run this command in the *master* node will create three replicas of the service.
+
+You can try to run ``docker ps`` in each node and see what is shown. You also can try to run again the previous commands in the *master*.
+
+But... **What is exactly to scale a docker service?** [Here](https://docs.docker.com/engine/reference/commandline/service_scale/) you have more information.
+
+* To conclude... **try to send messages to your telegram Bot and see how it answer!**
