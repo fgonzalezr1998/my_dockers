@@ -67,4 +67,4 @@ Now, we have the packaged virtual machine. We need to import it.
 
 * The last step is to enter to the virtual machine typing ``vagrant ssh``.
 
-<p align=center style="font-size:25px">**Now, we are inside the virtual box!**</p>
+**<p align=center style="font-size:25px">Now, we are inside the virtual box!</p>**
