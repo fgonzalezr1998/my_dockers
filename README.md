@@ -1,5 +1,6 @@
 # Table of Contents
 
+* [ROS Noetic Docker 1](#ROS-Noetic-Docker-1)
 * [Docker Swarm](#Docker-Swarm)
   * [What is a docker Swarm?](#What-is-a-docker-Swarm)
   * [How Docker Swarm Works?](#How-Docker-Swarm-Works)
@@ -7,6 +8,10 @@
     * [Dependencies](#Dependencies)
     * [Let's Start!](#Lets-Start)
       * [Starting the Environment](#Starting-the-Environment)
+
+# ROS Noetic Docker 1
+
+That is a simple Docker that install the *ros-noetic-ros-base* environment and launches a *roscore* for demostrating that it works
 
 # Docker Swarm
 
