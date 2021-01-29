@@ -8,6 +8,7 @@
     * [Dependencies](#Dependencies)
     * [Let's Start!](#Lets-Start)
       * [Starting the Environment](#Starting-the-Environment)
+      * [Cluster Startup](#Cluster-Startup)
 
 # ROS Noetic Docker 1
 
