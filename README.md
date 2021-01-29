@@ -10,10 +10,11 @@
       * [Starting the Environment](#Starting-the-Environment)
       * [Cluster Overview](#Cluster-Overview)
       * [Deploying apps in the Cluster](#Deploying-apps-in-the-Cluster)
+    * [What Else?](#What-Else)
 
 # ROS Noetic Docker 1
 
-That is a simple Docker that install the *ros-noetic-ros-base* environment and launches a *roscore* for demostrating that it works
+That is a simple Docker that install the *ros-noetic-ros-base* environment and launches a *roscore* for demostrating that it works.
 
 # Docker Swarm
 
@@ -214,3 +215,7 @@ But... **What is exactly to scale a docker service?** [Here](https://docs.docker
 * To conclude... **try to send messages to your telegram Bot and see how it answer!**
 
 > NOTE: To remove the service, type ``docker service rm telegram_bot``
+
+### What Else?
+
+Now, you can try to create your own Docker image to run other tasks. Also you can add more lxd containers as workers (esclavo3, esclavo4, etc...).
