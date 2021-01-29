@@ -8,7 +8,8 @@
     * [Dependencies](#Dependencies)
     * [Let's Start!](#Lets-Start)
       * [Starting the Environment](#Starting-the-Environment)
-      * [Cluster Startup](#Cluster-Startup)
+      * [Cluster Overview](#Cluster-Overview)
+      * [Deploying apps in the Cluster](#Deploying-apps-in-the-Cluster)
 
 # ROS Noetic Docker 1
 
@@ -86,7 +87,7 @@ At this moment, we have the virtual machine running successfully. But... we want
 
 **<p align=center style="font-size:25px">Now, we are inside the virtual box!</p>**
 
-#### Cluster Startup
+#### Cluster Overview
 
 Before all, maybe you need to open more than one shell with ``vagrant ssh``.
 
@@ -161,3 +162,9 @@ We should are seeing something like that:
 ![img](docs/nodes-list.png)
 
 ``docker node list`` informs us that there is three nodes (all are activated), their host names (esclavo1, esclavo2 and master), and it also indicates us which is the manager node (Leader). As we can see, *master* is the manager.
+
+So, Cluster is already deployed. Now, we are going how it works running a **Telegram Bot**. If you dont have a Telegram bot, you can create it so fast following [this instructions](https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token).
+
+> NOTE: It is very important to save the **token**
+
+#### Deploying apps in the Cluster
