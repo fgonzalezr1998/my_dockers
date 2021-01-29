@@ -107,3 +107,36 @@ $ lxc start --all
 After waiting a few seconds, if we type ``lxc list`` again, we will see that all containers are now running. So, we should have something like that:
 
 ![img](docs/lxc-running.png)
+
+We can see that IP addresses on *eth0* interfaces are:
+
+* **master:** 10.222.123.10
+* **esclavo1:** 10.222.123.11
+* **esclavo2:** 10.222.123.12
+
+**It is very important that nodes are connected each other**, so this is the next thing we are going to check:
+
+> NOTE: we can enter to the lxd containers typing *master*, *esclavo1* or *esclavo2* in each case.
+
+* Enter to the *master* lxd container (*master* node) typing ``master``. Then we are going to check the connection with the two workers:
+  ```
+  $ ping esclavo1
+  ```
+  Passed a few seconds, press CTRL+C. The output should be something like that:
+
+  ![img](docs/lxc-ping.png)
+
+  A we can see, in this example, three packets were transmitted and three packets were received. Any package lost. That means that the connection works successfully.
+
+  In the same way, check the connection with the second worker:
+
+  ```
+  $ ping esclavo2
+  ```
+  Now, exit from *master* pressing CTRL+D and check the connection with *master* and *esclavo2* from *esclavo1* and the connection with *master* and *esclavo1* from *esclavo2*. Remember! The commands are:
+
+  ```
+  $ ping master
+  $ ping esclavo1
+  $ ping esclavo2
+  ```
