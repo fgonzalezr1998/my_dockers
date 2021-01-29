@@ -1,7 +1,7 @@
 # Table of Contents
 
-* [Docker Swarm](#Docker Swarm)
-  * [What is a docker Swarm?](#What is a docker Swarm?)
+* [Docker Swarm](#Docker-Swarm)
+  * [What is a docker Swarm?](#What-is-a-docker-Swarm?)
 
 # Docker Swarm
 
