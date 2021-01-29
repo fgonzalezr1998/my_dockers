@@ -5,6 +5,8 @@
   * [How Docker Swarm Works?](#How-Docker-Swarm-Works)
   * [How Run this Didactic Project?](#How-Run-this-Didactic-Project)
     * [Dependencies](#Dependencies)
+    * [Let's Start!](#Lets-Start)
+      * [Starting the Environment](#Starting-the-Environment)
 
 # Docker Swarm
 
