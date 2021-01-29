@@ -140,3 +140,24 @@ We can see that IP addresses on *eth0* interfaces are:
   $ ping esclavo1
   $ ping esclavo2
   ```
+
+<hr />
+
+Arrived to this point, I recommend open three terminals, and enter in one node in each one.
+
+Also, we are going to be working with **Docker** so... we need **root privileges**. Then, we need to type ``sudo su`` inside each node.
+
+<center>But... **Where is the Cluster?!**</center>
+
+
+Go to the *master* node! Now, type the next command:
+
+```
+$ docker node list
+```
+
+We should are seeing something like that:
+
+![img](docs/nodes-list.png)
+
+``docker node list`` informs us that there is three nodes (all are activated), their host names (esclavo1, esclavo2 and master), and it also indicates us which is the manager node (Leader). As we can see, *master* is the manager.
