@@ -2,6 +2,9 @@
 
 * [Docker Swarm](#Docker-Swarm)
   * [What is a docker Swarm?](#What-is-a-docker-Swarm?)
+  * [How Docker Swarm Works?](#How-Docker-Swarm-Works?)
+  * [How Run this Didactic Project?](#How-Run-this-Didactic-Project?)
+    * [Dependencies](#Dependencies)
 
 # Docker Swarm
 
