@@ -1,3 +1,8 @@
+# Table of Contents
+
+* [Docker Swarm](#Docker Swarm)
+  * [What is a docker Swarm?](#What is a docker Swarm?)
+
 # Docker Swarm
 
 With this example, I pretend to simulate the performance of a cluster formed by different nodes. Before to start, I am going to explain... **what is a docker swarm?**
