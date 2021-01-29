@@ -53,6 +53,7 @@ First, I will tell how this project works and how reproduce its result.
   ```
   $ cat docker_swarm.box.a* > docker_swarm.box
   ```
+
 Now, we have the packaged virtual machine. We need to import it.
 
 * Import the *docker_swarm.box* file with the next command:
@@ -61,7 +62,7 @@ Now, we have the packaged virtual machine. We need to import it.
   $ vagrant box add docker_swarm docker_swarm.box
   ```
 
-  With this command, we will have imported an image named *docker_swarm*.
+With this command, we will have imported an image named *docker_swarm*.
 
 * The next step is to create the virtual box from this image previously imported. For doing this, we need type the next commands:
 
@@ -78,8 +79,30 @@ Now, we have the packaged virtual machine. We need to import it.
   ```
   > NOTE: We only need to specify the flag '--provider virtualbox' the first time that we run it.
 
-  At this moment, we have the virtual machine running successfully. But... we want to enter on it to start working!
+At this moment, we have the virtual machine running successfully. But... we want to enter on it to start working!
 
 * The last step is to enter to the virtual machine typing ``vagrant ssh``.
 
 **<p align=center style="font-size:25px">Now, we are inside the virtual box!</p>**
+
+#### Cluster Startup
+
+Before all, maybe you need to open more than one shell with ``vagrant ssh``.
+
+If we type the command ``lxc list`` we well see three [lxd containers](https://linuxcontainers.org/lxd/introduction/):
+
+* master
+* esclavo1
+* esclavo2
+
+**Each of these containers is simulating a node of the cluster** where *master* is the **manager node** and *esclavo1* and *esclavo2* are the **workers nodes**.
+
+The first thing we have to do is run all nodes (lxd containers). For doing this, we need to type the following command:
+
+```
+$ lxc start --all
+```
+
+After waiting a few seconds, if we type ``lxc list`` again, we will see that all containers are now running. So, we should have something like that:
+
+![img](docs/lxc-running.png)
