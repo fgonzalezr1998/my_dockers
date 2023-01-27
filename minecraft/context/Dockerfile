@@ -1,11 +1,11 @@
 #! /bin/sh
 
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 # Install dependencies
 
 RUN apt-get update && apt-get upgrade -y && \
-apt-get install default-jdk default-jre -y && \
+apt-get install openjdk-19-jdk -y && \
 apt-get install wget -y
 
 # Create a new user
@@ -22,10 +22,9 @@ USER fernando
 
 # Download the 'jar' file to install the forge server and run it
 
-RUN wget https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.4-35.1.4/forge-1.16.4-35.1.4-installer.jar && \
-mkdir minecraft_server && mv forge-1.16.4-35.1.4-installer.jar minecraft_server && \
-cd minecraft_server && java -jar forge-1.16.4-35.1.4-installer.jar --installServer && \
-java -Xmx2048M -jar forge-1.16.4-35.1.4.jar nogui
+RUN wget https://maven.minecraftforge.net/net/minecraftforge/forge/1.19.2-43.2.0/forge-1.19.2-43.2.0-installer.jar && \
+mkdir minecraft_server && mv forge-1.19.2-43.2.0-installer.jar minecraft_server && \
+cd minecraft_server && java -jar forge-1.19.2-43.2.0-installer.jar --installServer
 
 
 COPY entrypoint.sh /
